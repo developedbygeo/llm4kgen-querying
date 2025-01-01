@@ -8,8 +8,8 @@ import {
 
 import { llm } from './llm';
 import { ToolsAgentStep } from 'langchain/agents/openai/output_parser';
-import { listRelationshipsTool } from './tools/listRelationships';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
+import { DATABASE_RELATED_TOOLS } from './tools/schema';
 
 const createAgentRunnable = async (): Promise<
     AgentRunnableSequence<
@@ -27,7 +27,7 @@ const createAgentRunnable = async (): Promise<
 
     return createToolCallingAgent({
         llm,
-        tools: [listRelationshipsTool],
+        tools: [...DATABASE_RELATED_TOOLS],
         prompt,
     });
 };
@@ -37,7 +37,7 @@ export const createAgent = async () => {
 
     return new AgentExecutor({
         agent: agentRunnable,
-        tools: [listRelationshipsTool],
+        tools: [...DATABASE_RELATED_TOOLS],
         verbose: true,
     });
 };
