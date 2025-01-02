@@ -2,9 +2,10 @@ import { DynamicTool } from 'langchain/tools';
 import { Neo4jConnection } from '../../../db';
 import config from '../../../config';
 import { fetchProperties } from '../../../modules/databaseCharacteristics';
+import { TOOL_NAMES } from '../../../enums/tools';
 
 export const listPropertiesTool = new DynamicTool({
-    name: 'list_properties',
+    name: TOOL_NAMES.LIST_PROPERTIES,
     description: `Use this tool to retrieve all property keys in the knowledge graph. 
     Call this tool when the user asks about properties in the graph, such as "What properties exist?" or "List all property keys."
     Input: None.

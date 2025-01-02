@@ -1,8 +1,8 @@
-list all properties in the graph
+- list all properties in the graph
+- list all labels in the graph
+- list all relationships in the graph
 
-list all labels in the graph
-
-queries:
+####### queries #######
 
 MATCH (artwork:Artwork)
 RETURN artwork.Title AS title, artwork.CreditLine AS creditLine, artwork.Date AS date
@@ -14,3 +14,17 @@ MATCH (artist:Artist)
 RETURN artist.DisplayName AS name, artist.ArtistBio AS bio, artist.BeginDate AS beginDate, artist.EndDate AS endDate
 ORDER BY rand()
 LIMIT 10;
+
+
+####### NLP to cypher #######
+
+- find 10 random artists
+- list 10 artworks created after the year 2000
+- find 10 artworks where the title includes the word sun
+- find the top 10 artists who have created the most artwork
+- find the top 10 artists who have created the most artwork and return the artist and how many artworks they have created
+- list the top 10 most recent artwork
+- What are the most popular nationalities of artists based on the number of artworks they have created? Return the nationalities and their respective artwork counts, sorted by the most popular.
+- show 10 artworks with 'gift' in the credit line
+- show 10 artworks with 'gift' in the credit line along with the artist who created them
+- show 10 artworks with 'gift' in the credit line along with the artist who created them and their nationality
