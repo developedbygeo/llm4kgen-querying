@@ -1,0 +1,16 @@
+list all properties in the graph
+
+list all labels in the graph
+
+queries:
+
+MATCH (artwork:Artwork)
+RETURN artwork.Title AS title, artwork.CreditLine AS creditLine, artwork.Date AS date
+ORDER BY rand()
+LIMIT 10;
+
+
+MATCH (artist:Artist)
+RETURN artist.DisplayName AS name, artist.ArtistBio AS bio, artist.BeginDate AS beginDate, artist.EndDate AS endDate
+ORDER BY rand()
+LIMIT 10;

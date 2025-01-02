@@ -21,8 +21,6 @@ export const fetchGraphMetadata = async () => {
         fetchLabels(conn),
     ]);
 
-    await conn.close();
-
     return {
         labels,
         relationships,

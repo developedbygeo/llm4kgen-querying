@@ -5,7 +5,7 @@ import { fetchLabels } from '../../../modules/databaseCharacteristics';
 
 export const listLabelsTool = new DynamicTool({
     name: 'list_labels',
-    description: `Use this tool to retrieve all node labels in the knowledge graph. 
+    description: `Use this tool to retrieve all labels in the knowledge graph. 
     Call this tool when the user asks about labels in the graph, such as "What labels exist?" or "List all node labels."
     Input: None.
     Output: A comma-separated list of labels, or a message indicating no labels are found.`,

@@ -26,7 +26,6 @@ async function main() {
             const result = await agent.invoke({
                 input,
             });
-
             console.log('Response:\n', result);
         } catch (error) {
             if (error instanceof Error) {
