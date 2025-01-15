@@ -6,6 +6,8 @@
         "strict": true,
         "lib": ["esnext"],
         "esModuleInterop": true,
-        "moduleResolution": "nodenext"
-    }
+        "moduleResolution": "nodenext",
+        "skipLibCheck": true
+    },
+    "exclude": ["node_modules/**"]
 }
