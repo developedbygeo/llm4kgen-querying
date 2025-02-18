@@ -21,7 +21,7 @@ export const translateToCypherTool = new DynamicTool({
       - Relationship types: ${metadata.relationships.join(', ')}
       - Property keys: ${metadata.properties.join(', ')}
 
-      Translate the following natural language query into a Cypher query, only by using the graph schema:
+      Translate the following natural language query into a Cypher query:
       "${sanitizedInput} . Only return the cypher query, without any additional text or quotes"
     `;
 

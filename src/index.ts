@@ -2,6 +2,7 @@ import { Neo4jConnection } from './db';
 import { createAgent } from './agent';
 import { rl } from './modules/readline';
 import config from './config';
+import { logger } from './modules/logger';
 
 async function main() {
     // initialize singleton connection class
@@ -26,10 +27,10 @@ async function main() {
             const result = await agent.invoke({
                 input,
             });
-            console.log('Response:\n', result);
+            logger.info(JSON.stringify(result, null, 2));
         } catch (error) {
             if (error instanceof Error) {
-                console.error('Error:', error?.message);
+                logger.error('Error:', error?.message);
             }
         }
     });
